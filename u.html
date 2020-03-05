@@ -183,7 +183,7 @@
         var p = 0;
         var i = 0;
         function start() {
-            myVar = setTimeout(myfunction, 1000);
+            myVar = setTimeout(myfunction, 2000);
         }
         function myfunction() {
             for (var i = 0; i < n; i++) {
@@ -194,7 +194,7 @@
                     var temp1 = document.getElementsByClassName("demo")[i].style.left;
                     document.getElementsByClassName("demo")[i].style.left = document.getElementsByClassName("demo")[i + 1].style.left;
                     document.getElementsByClassName("demo")[i + 1].style.left = temp1;
-                    document.getElementById("arr").innerHTML = myArray + " height in px";
+                    // document.getElementById("arr").innerHTML = myArray + " height in px";
                 }
             }
             if (n > 0) {
