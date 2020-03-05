@@ -176,14 +176,14 @@
         b8 = parseInt(b8);
         b9 = parseInt(b9);
         b10 = parseInt(b10);
-
+        // document.getElementById("kalee").innerHTML = b5;
         var myArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
         var n = myArray.length - 1;
         // var x = array;
         var p = 0;
         var i = 0;
-        function start(){
-            myVar = setTimeout(myfunction,1000)
+        function start() {
+            myVar = setTimeout(myfunction, 1000);
         }
         function myfunction() {
             for (var i = 0; i < n; i++) {
@@ -191,19 +191,19 @@
                     var temp = myArray[i];
                     myArray[i] = myArray[i + 1];
                     myArray[i + 1] = temp;
-                    var temp1 = document.getElementsByClassName("demo")[i].style.height;
-                    document.getElementsByClassName("demo")[i].style.height = document.getElementsByClassName("demo")[i + 1].style.height;
-                    document.getElementsByClassName("demo")[i + 1].style.height = temp1;
-                    document.getElementById("arr").innerHTML = myArray  + " height in px";
-                    }
-                } 
-                if (n > 0) {
-                        n--;
-                        start();
-                        document.getElementById("kalee").innerHTML = n;
+                    var temp1 = document.getElementsByClassName("demo")[i].style.left;
+                    document.getElementsByClassName("demo")[i].style.left = document.getElementsByClassName("demo")[i + 1].style.left;
+                    document.getElementsByClassName("demo")[i + 1].style.left = temp1;
+                    document.getElementById("arr").innerHTML = myArray + " height in px";
                 }
-
             }
+            if (n > 0) {
+                n--;
+                start();
+                document.getElementById("kalee").innerHTML = n;
+            }
+
+        }
     </script>
 </body>
 
