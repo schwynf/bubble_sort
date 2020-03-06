@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./bub_img.jpeg">
+    <title>Bubble_Sort</title>
+</head>
+<style>
+    /* http://meyerweb.com/eric/tools/css/reset/ */
+    /* v1.0 | 20080212 */
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    font,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+    }
+
+    blockquote,
+    q {
+        quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
+
+    /* remember to define focus styles! */
+    :focus {
+        outline: 0;
+    }
+
+    /* remember to highlight inserts somehow! */
+    ins {
+        text-decoration: none;
+    }
+
+    del {
+        text-decoration: line-through;
+    }
+
+    /* tables still need 'cellspacing="0"' in the markup */
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .demo {
+        width: 50px;
+        border: 2px solid black;
+        background-color: coral;
+        position: absolute;
+        bottom: 0px;
+    }
+
+    div {
+        background-color: blue;
+        height: 300px;
+        position: relative;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div>
+        <p class="demo" style="height:250px;left:0px;">!</p>
+        <p class="demo" style="height: 240px;left:55px;">!</p>
+        <p class="demo" style="height:220px; left:110px">P</p>
+        <p class="demo" style="height:200px;left:165px;">M</p>
+        <p class="demo" style="height: 180px;left:220px;">A</p>
+        <p class="demo" style="height:150px; left:275px">C</p>
+        <p class="demo" style="height:120px;left:330px;">T</p>
+        <p class="demo" style="height: 100px;left:385px;">O</p>
+        <p class="demo" style="height:70px; left:440px">O</p>
+        <p class="demo" style="height:50px; left:495px">B</p>
+    </div>
+    <button style="background-color: aqua;" onclick="start()">click</button>
+    <button style="background-color: aqua;" onclick="setArray()">setArray</button>
+    <button style="background-color: aqua;" id="po" onclick="restart()">random</button>
+    <a id="arr"></a>
+    <p id="kalee"></p>
+    <script>
+        var doc = document.getElementsByClassName("demo");
+        var b1;
+        var b2;
+        var b3;
+        var b4;
+        var b5;
+        var b6;
+        var b7;
+        var b8;
+        var b9;
+        var b10;
+        var myArray;
+        var x;
+        var n;
+        var p = 0;
+        var i = 0;
+        function setArray() {
+        b1 = doc[0].style.height;
+        b2 = doc[1].style.height;
+        b3 = doc[2].style.height;
+        b4 = doc[3].style.height;
+        b5 = doc[4].style.height;
+        b6 = doc[5].style.height;
+        b7 = doc[6].style.height;
+        b8 = doc[7].style.height;
+        b9 = doc[8].style.height;
+        b10 = doc[9].style.height;
+
+        b1 = parseInt(b1);
+        b2 = parseInt(b2);
+        b3 = parseInt(b3);
+        b4 = parseInt(b4);
+        b5 = parseInt(b5);
+        b6 = parseInt(b6);
+        b7 = parseInt(b7);
+        b8 = parseInt(b8);
+        b9 = parseInt(b9);
+        b10 = parseInt(b10);
+        x=myArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
+        n = x.length - 1;
+        }
+        function start() {
+            myVar = setTimeout(myfunction, 1000);
+        }
+        function restart() {
+        var a1 = Math.floor(Math.random() * 250);
+        var a2 = Math.floor(Math.random() * 250);
+        var a3 = Math.floor(Math.random() * 250);
+        var a4 = Math.floor(Math.random() * 250);
+        var a5 = Math.floor(Math.random() * 250);
+        var a6 = Math.floor(Math.random() * 250);
+        var a7 = Math.floor(Math.random() * 250);
+        var a8 = Math.floor(Math.random() * 250);
+        var a9 = Math.floor(Math.random() * 250);
+        var a10 = Math.floor(Math.random() * 250);
+    
+        b1 = doc[0].style.height = a1 + "px";
+        b2 = doc[1].style.height = a2 + "px";
+        b3 = doc[2].style.height = a3+ "px";
+        b4 = doc[3].style.height = a4+ "px";
+        b5 = doc[4].style.height = a5+ "px";
+        b6 = doc[5].style.height = a6+ "px";
+        b7 = doc[6].style.height = a7+ "px";
+        b8 = doc[7].style.height = a8+ "px";
+        b9 = doc[8].style.height = a9+ "px";
+        b10 = doc[9].style.height = a10+ "px";
+
+        b1 = parseInt(b1);
+        b2 = parseInt(b2);
+        b3 = parseInt(b3);
+        b4 = parseInt(b4);
+        b5 = parseInt(b5);
+        b6 = parseInt(b6);
+        b7 = parseInt(b7);
+        b8 = parseInt(b8);
+        b9 = parseInt(b9);
+        b10 = parseInt(b10);
+        x= myArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
+        n = x.length - 1;
+        }
+        function myfunction() {
+            var swap = true;
+            for (var i = 0; i < n; i++) {
+                if (x[i] > x[i + 1]) {
+                    var temp = x[i];
+                    x[i] = x[i + 1];
+                    x[i + 1] = temp;
+                    var temp1 = doc[i].style.height;
+                    doc[i].style.height = doc[i + 1].style.height;
+                    doc[i + 1].style.height = temp1;
+                    var temp2 = doc[i].innerHTML;
+                    doc[i].innerHTML = doc[i + 1].innerHTML;
+                    doc[i + 1].innerHTML = temp2;
+                    var swap = false;
+                }
+            }
+            if (n > -1) {
+                --n;
+                start();
+            }
+            if (swap) {
+                clearTimeout(myVar);
+                // ++n;
+                n=9;
+            }
+            document.getElementById("kalee").innerHTML = n;
+            document.getElementById("arr").innerHTML = x + " height in px";
+        }
+    </script>
+</body>
+
+</html>
