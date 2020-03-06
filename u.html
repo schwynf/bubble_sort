@@ -135,36 +135,38 @@
         background-color: blue;
         height: 300px;
         position: relative;
+        text-align: center;
     }
 </style>
 
 <body>
     <div>
-        <p class="demo" style="height:200px;left:0px;">B1</p>
-        <p class="demo" style="height: 180px;left:55px;">B2</p>
-        <p class="demo" style="height:160px; left:110px">B3</p>
-        <p class="demo" style="height:140px;left:165px;">B4</p>
-        <p class="demo" style="height: 120px;left:220px;">B5</p>
-        <p class="demo" style="height:100px; left:275px">B6</p>
-        <p class="demo" style="height:80px;left:330px;">B7</p>
-        <p class="demo" style="height: 60px;left:385px;">B8</p>
-        <p class="demo" style="height:40px; left:440px">B9</p>
-        <p class="demo" style="height:20px; left:495px">B10</p>
+        <p class="demo" style="height:250px;left:0px;">!</p>
+        <p class="demo" style="height: 240px;left:55px;">!</p>
+        <p class="demo" style="height:220px; left:110px">P</p>
+        <p class="demo" style="height:200px;left:165px;">M</p>
+        <p class="demo" style="height: 180px;left:220px;">A</p>
+        <p class="demo" style="height:150px; left:275px">C</p>
+        <p class="demo" style="height:120px;left:330px;">T</p>
+        <p class="demo" style="height: 100px;left:385px;">O</p>
+        <p class="demo" style="height:70px; left:440px">O</p>
+        <p class="demo" style="height:50px; left:495px">B</p>
     </div>
     <button style="background-color: aqua;" onclick="start()">click</button>
     <a id="arr"></a>
     <p id="kalee"></p>
     <script>
-        var b1 = document.getElementsByClassName("demo")[0].style.height;
-        var b2 = document.getElementsByClassName("demo")[1].style.height;
-        var b3 = document.getElementsByClassName("demo")[2].style.height;
-        var b4 = document.getElementsByClassName("demo")[3].style.height;
-        var b5 = document.getElementsByClassName("demo")[4].style.height;
-        var b6 = document.getElementsByClassName("demo")[5].style.height;
-        var b7 = document.getElementsByClassName("demo")[6].style.height;
-        var b8 = document.getElementsByClassName("demo")[7].style.height;
-        var b9 = document.getElementsByClassName("demo")[8].style.height;
-        var b10 = document.getElementsByClassName("demo")[9].style.height;
+        var doc = document.getElementsByClassName("demo");
+        var b1 = doc[0].style.height;
+        var b2 = doc[1].style.height;
+        var b3 = doc[2].style.height;
+        var b4 = doc[3].style.height;
+        var b5 = doc[4].style.height;
+        var b6 = doc[5].style.height;
+        var b7 = doc[6].style.height;
+        var b8 = doc[7].style.height;
+        var b9 = doc[8].style.height;
+        var b10 = doc[9].style.height;
 
         b1 = parseInt(b1);
         b2 = parseInt(b2);
@@ -176,33 +178,40 @@
         b8 = parseInt(b8);
         b9 = parseInt(b9);
         b10 = parseInt(b10);
-        // document.getElementById("kalee").innerHTML = b5;
+
         var myArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
         var n = myArray.length - 1;
-        // var x = array;
         var p = 0;
         var i = 0;
         function start() {
-            myVar = setTimeout(myfunction, 2000);
+            myVar = setTimeout(myfunction, 1000);
         }
         function myfunction() {
+            var swap = true;
             for (var i = 0; i < n; i++) {
                 if (myArray[i] > myArray[i + 1]) {
                     var temp = myArray[i];
                     myArray[i] = myArray[i + 1];
                     myArray[i + 1] = temp;
-                    var temp1 = document.getElementsByClassName("demo")[i].style.left;
-                    document.getElementsByClassName("demo")[i].style.left = document.getElementsByClassName("demo")[i + 1].style.left;
-                    document.getElementsByClassName("demo")[i + 1].style.left = temp1;
-                    // document.getElementById("arr").innerHTML = myArray + " height in px";
+                    var temp1 = doc[i].style.height;
+                    doc[i].style.height = doc[i + 1].style.height;
+                    doc[i + 1].style.height = temp1;
+                    var temp2 = doc[i].innerHTML;
+                    doc[i].innerHTML = doc[i + 1].innerHTML;
+                    doc[i + 1].innerHTML = temp2;
+                    var swap = false;
                 }
             }
-            if (n > 0) {
-                n--;
+            if (n > -1) {
+                --n;
                 start();
-                document.getElementById("kalee").innerHTML = n;
             }
-
+            if (swap) {
+                clearTimeout(myVar);
+                ++n;
+            }
+            document.getElementById("kalee").innerHTML = n;
+            document.getElementById("arr").innerHTML = myArray + " height in px";
         }
     </script>
 </body>

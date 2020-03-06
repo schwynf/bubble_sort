@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+<body>
+<script>
+    function bubble_Sort()
+{
+    var swapp;
+    var n = array.length-1;
+    var x=array;
+    do {
+        swapp = false;
+        for (var i=0; i < n; i++)
+        {
+            if (x[i] > x[i+1])
+            {
+               var temp = x[i];
+               x[i] = x[i+1];
+               x[i+1] = temp;
+                swapp = true;
+            }
+        }
+        n--
+    } while (swapp);
+  return x; 
+}
+</script>
+</body>
+</html>
