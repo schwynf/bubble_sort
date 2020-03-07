@@ -138,7 +138,6 @@
         position: relative;
         text-align: center;
     }
-    
 </style>
 
 <body>
@@ -208,10 +207,10 @@
         // function start() {
         //     myVar = setTimeout(myfunction, 500);
         //  }
-         function stop() {
+        function stop() {
             clearTimeout(myVar);
             // clearTimeout(myVar1)
-         }
+        }
         function random() {
             document.getElementById("p1").innerHTML = "";
             document.getElementById("p2").innerHTML = "";
@@ -224,42 +223,42 @@
             document.getElementById("p9").innerHTML = "";
             document.getElementById("p10").innerHTML = "";
 
-        var a1 = Math.floor(Math.random() * 250);
-        var a2 = Math.floor(Math.random() * 250);
-        var a3 = Math.floor(Math.random() * 250);
-        var a4 = Math.floor(Math.random() * 250);
-        var a5 = Math.floor(Math.random() * 250);
-        var a6 = Math.floor(Math.random() * 250);
-        var a7 = Math.floor(Math.random() * 250);
-        var a8 = Math.floor(Math.random() * 250);
-        var a9 = Math.floor(Math.random() * 250);
-        var a10 = Math.floor(Math.random() * 250);
-    
-        b1 = doc[0].style.height = a1 + "px";
-        b2 = doc[1].style.height = a2 + "px";
-        b3 = doc[2].style.height = a3+ "px";
-        b4 = doc[3].style.height = a4+ "px";
-        b5 = doc[4].style.height = a5+ "px";
-        b6 = doc[5].style.height = a6+ "px";
-        b7 = doc[6].style.height = a7+ "px";
-        b8 = doc[7].style.height = a8+ "px";
-        b9 = doc[8].style.height = a9+ "px";
-        b10 = doc[9].style.height = a10+ "px";
+            var a1 = Math.floor(Math.random() * 250);
+            var a2 = Math.floor(Math.random() * 250);
+            var a3 = Math.floor(Math.random() * 250);
+            var a4 = Math.floor(Math.random() * 250);
+            var a5 = Math.floor(Math.random() * 250);
+            var a6 = Math.floor(Math.random() * 250);
+            var a7 = Math.floor(Math.random() * 250);
+            var a8 = Math.floor(Math.random() * 250);
+            var a9 = Math.floor(Math.random() * 250);
+            var a10 = Math.floor(Math.random() * 250);
 
-        b1 = parseInt(b1);
-        b2 = parseInt(b2);
-        b3 = parseInt(b3);
-        b4 = parseInt(b4);
-        b5 = parseInt(b5);
-        b6 = parseInt(b6);
-        b7 = parseInt(b7);
-        b8 = parseInt(b8);
-        b9 = parseInt(b9);
-        b10 = parseInt(b10);
-        x= myArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
-        document.getElementById("arr").innerHTML = x + " height in px";
+            b1 = doc[0].style.height = a1 + "px";
+            b2 = doc[1].style.height = a2 + "px";
+            b3 = doc[2].style.height = a3 + "px";
+            b4 = doc[3].style.height = a4 + "px";
+            b5 = doc[4].style.height = a5 + "px";
+            b6 = doc[5].style.height = a6 + "px";
+            b7 = doc[6].style.height = a7 + "px";
+            b8 = doc[7].style.height = a8 + "px";
+            b9 = doc[8].style.height = a9 + "px";
+            b10 = doc[9].style.height = a10 + "px";
+
+            b1 = parseInt(b1);
+            b2 = parseInt(b2);
+            b3 = parseInt(b3);
+            b4 = parseInt(b4);
+            b5 = parseInt(b5);
+            b6 = parseInt(b6);
+            b7 = parseInt(b7);
+            b8 = parseInt(b8);
+            b9 = parseInt(b9);
+            b10 = parseInt(b10);
+            x = myArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
+            document.getElementById("arr").innerHTML = x + " height in px";
         }
-        function colorChange(){
+        function colorChange() {
             document.getElementById("p1").style.backgroundColor = "coral";
             document.getElementById("p2").style.backgroundColor = "coral";
             document.getElementById("p3").style.backgroundColor = "coral";
@@ -292,8 +291,8 @@
             if (n > -1) {
                 --n;
                 // start();
-               var myVar = setTimeout(myfunction, 1000);
-               var myVar1 = setTimeout(colorChange,500)
+                var myVar = setTimeout(myfunction, 1000);
+                var myVar1 = setTimeout(colorChange, 500)
             }
             if (swap) {
                 clearTimeout(myVar);
