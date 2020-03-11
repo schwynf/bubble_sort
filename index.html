@@ -22,8 +22,8 @@
     <p class="demo" id="p9" style="height:70px; left:440px">O</p>
     <p class="demo" id="p10" style="height:50px; left:495px">B</p>
   </div>
-  <button style="background-color: aqua;" onclick="myfunction()">start</button>
-  <button style="background-color: aqua;" id="po" onclick="random()">random</button>
+  <button style="background-color: aqua;" onclick="checkStart()">start</button>
+  <button style="background-color: aqua;" id="po" onclick="checkRandom()">random</button>
   <a id="arr"></a>
   <p id="kalee"></p>
   <script>
@@ -70,7 +70,20 @@
     x = myArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
     n = x.length - 1;
     document.getElementById("arr").innerHTML = x + " height in px";
-
+    document.getElementById("kalee").innerHTML = n;
+    
+    // Dont restart until n = 9
+    function checkStart(){
+      if (n==9){
+        myfunction();
+      }
+    }
+    // Dont allow random until n = 9
+    function checkRandom(){
+      if (n==9){
+        random();
+      }
+    }
     // Get a random number
     function random() {
       for (var i = 0; i < 10; i++) {
@@ -126,7 +139,7 @@
           var swap = false;
         }
       }
-      if (n > 0) {
+      if (n > 0 && swap == false) {
         --n;
         for (var i = 0; i < 10; i++) {
         doc[i].style.backgroundColor = "white";
