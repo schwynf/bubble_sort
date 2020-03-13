@@ -2,159 +2,174 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="./img/bub_img.jpeg">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Bubble_Sort</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/bub_img.jpeg">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Bubble_Sort</title>
 </head>
 
 <body>
-  <div>
-    <p class="demo" id="p1" style="height:250px;left:0px;">!</p>
-    <p class="demo" id="p2" style="height: 240px;left:55px;">!</p>
-    <p class="demo" id="p3" style="height:220px; left:110px">P</p>
-    <p class="demo" id="p4" style="height:200px;left:165px;">M</p>
-    <p class="demo" id="p5" style="height: 180px;left:220px;">A</p>
-    <p class="demo" id="p6" style="height:150px; left:275px">C</p>
-    <p class="demo" id="p7" style="height:120px;left:330px;">T</p>
-    <p class="demo" id="p8" style="height: 100px;left:385px;">O</p>
-    <p class="demo" id="p9" style="height:70px; left:440px">O</p>
-    <p class="demo" id="p10" style="height:50px; left:495px">B</p>
-  </div>
-  <button style="background-color: aqua;" onclick="checkStart()">start</button>
-  <button style="background-color: aqua;" id="po" onclick="checkRandom()">random</button>
-  <a id="arr"></a>
-  <p id="kalee"></p>
-  <script>
-    var doc = document.getElementsByClassName("demo");
-    var b1;
-    var b2;
-    var b3;
-    var b4;
-    var b5;
-    var b6;
-    var b7;
-    var b8;
-    var b9;
-    var b10;
-    var myArray;
-    var x;
-    var n;
-    var p = 0;
-    var i = 0;
-    var myVar1;
-    var myVar;
-
-    b1 = doc[0].style.height;
-    b2 = doc[1].style.height;
-    b3 = doc[2].style.height;
-    b4 = doc[3].style.height;
-    b5 = doc[4].style.height;
-    b6 = doc[5].style.height;
-    b7 = doc[6].style.height;
-    b8 = doc[7].style.height;
-    b9 = doc[8].style.height;
-    b10 = doc[9].style.height;
-
-    b1 = parseInt(b1);
-    b2 = parseInt(b2);
-    b3 = parseInt(b3);
-    b4 = parseInt(b4);
-    b5 = parseInt(b5);
-    b6 = parseInt(b6);
-    b7 = parseInt(b7);
-    b8 = parseInt(b8);
-    b9 = parseInt(b9);
-    b10 = parseInt(b10);
-    x = myArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
-    n = x.length - 1;
-    document.getElementById("arr").innerHTML = x + " height in px";
-    document.getElementById("kalee").innerHTML = n;
-    
-    // Dont restart until n = 9
-    function checkStart(){
-      if (n==9){
-        myfunction();
-      }
-    }
-    // Dont allow random until n = 9
-    function checkRandom(){
-      if (n==9){
-        random();
-      }
-    }
-    // Get a random number
-    function random() {
-      for (var i = 0; i < 10; i++) {
-        doc[i].innerHTML = "";
-      }
-      b1 = doc[0].style.height = Math.floor(Math.random() * 250) + "px";
-      b2 = doc[1].style.height = Math.floor(Math.random() * 250) + "px";
-      b3 = doc[2].style.height = Math.floor(Math.random() * 250) + "px";
-      b4 = doc[3].style.height = Math.floor(Math.random() * 250) + "px";
-      b5 = doc[4].style.height = Math.floor(Math.random() * 250) + "px";
-      b6 = doc[5].style.height = Math.floor(Math.random() * 250) + "px";
-      b7 = doc[6].style.height = Math.floor(Math.random() * 250) + "px";
-      b8 = doc[7].style.height = Math.floor(Math.random() * 250) + "px";
-      b9 = doc[8].style.height = Math.floor(Math.random() * 250) + "px";
-      b10 = doc[9].style.height = Math.floor(Math.random() * 250) + "px";
-
-    //   Change string to numnber 100px --> 100
-      b1 = parseInt(b1);
-      b2 = parseInt(b2);
-      b3 = parseInt(b3);
-      b4 = parseInt(b4);
-      b5 = parseInt(b5);
-      b6 = parseInt(b6);
-      b7 = parseInt(b7);
-      b8 = parseInt(b8);
-      b9 = parseInt(b9);
-      b10 = parseInt(b10);
-      x = myArray = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
-      document.getElementById("arr").innerHTML = x + " height in px";
-
-    }
-    // Change to white
-    function colorChange() {
-      for (var i = 0; i < 10; i++) {
-        doc[i].style.backgroundColor = "coral";
-      }
-
-    }
-    // Engine
-    function myfunction() {
-      var swap = true;
-      for (var i = 0; i < n; i++) {
-        if (x[i] > x[i + 1]) {
-          var temp = x[i];
-          x[i] = x[i + 1];
-          x[i + 1] = temp;
-          var temp1 = doc[i].style.height;
-          doc[i].style.height = doc[i + 1].style.height;
-          doc[i + 1].style.height = temp1;
-          var temp2 = doc[i].innerHTML;
-          doc[i].innerHTML = doc[i + 1].innerHTML;
-          doc[i + 1].innerHTML = temp2;
-          var swap = false;
+    <div>
+    </div>
+    <button style="background-color: aqua;" onclick="checkStart()">start</button>
+    <button style="background-color: aqua;" id="po" onclick="checkRandom()">random</button>
+    <a id="arr"></a>
+    <p id="kalee"></p>
+    <input id="d" type="text">enter height</input><button onclick="getHeight()">click</button>
+    <script>
+        var n = 10;
+        var doc = document.getElementsByClassName("demo");
+        var myArray = [];
+        var boot;
+        var x;
+        var n1;
+        var b;
+        for (i = 0; i < n; i++) {
+            var para = document.createElement("P");
+            document.getElementsByTagName("div")[0].appendChild(para);
         }
-      }
-      if (n > 0 && swap == false) {
-        --n;
-        for (var i = 0; i < 10; i++) {
-        doc[i].style.backgroundColor = "white";
-      }
-        var myVar = setTimeout(myfunction, 1000);
-        var myVar1 = setTimeout(colorChange, 500);
-      }
-      if (swap) {
-        clearTimeout(myVar);
-        n = 9;
-      }
-      document.getElementById("kalee").innerHTML = n;
-      document.getElementById("arr").innerHTML = x + " height in px";
-    }
-  </script>
+        // create class
+        for (i = 0; i < n; i++) {
+            var p = document.getElementsByTagName("P")[i];
+            var att = document.createAttribute("class");
+            att.value = "demo"
+            p.setAttributeNode(att)
+        }
+        // setting height and length
+        var l = 0;
+        var h = 300;
+        for (i = 0; i < n; i++) {
+            doc[i].style.height = h + "px";
+            doc[i].style.left = l + "px";
+            h -= 1;
+            l += 20;
+        }
+        // setting up my array
+        for (i = 0; i < n; i++) {
+            myArray[i] = parseInt(doc[i].style.height)
+        }
+        x = myArray;
+        n1 = myArray.length - 1;
+        b = n1;
+
+
+
+
+
+
+        // start
+        function checkStart() {
+            if (n1 == b) {
+                myfunction();
+            }
+        }
+
+
+
+
+
+
+
+        // check random
+        function checkRandom() {
+            if (n1 == b) {
+                random();
+            }
+        }
+
+
+
+        function getHeight() {
+            var boot = document.getElementById("d").value;
+            // delete bars
+            for (i = 0; i < n; i++) {
+                doc[0].remove();
+                myArray.pop();
+            }
+            // create element
+            for (i = 0; i < boot; i++) {
+                var para = document.createElement("P");
+                document.getElementsByTagName("div")[0].appendChild(para);
+            }
+            // create p class
+            for (i = 0; i < boot; i++) {
+                var p = document.getElementsByTagName("P")[i];
+                var att = document.createAttribute("class");
+                att.value = "demo"
+                p.setAttributeNode(att)
+            }
+            // setting height and length
+            var l = 0;
+            var h = 300;
+            for (i = 0; i < boot; i++) {
+                doc[i].style.height = h + "px";
+                doc[i].style.left = l + "px";
+                h -= 1;
+                l += 20;
+            }
+            // setting up my array
+            for (i = 0; i < boot; i++) {
+                myArray[i] = parseInt(doc[i].style.height)
+            }
+            console.log(myArray);
+            x = myArray;
+            n1 = myArray.length - 1;
+            b = n1;
+            n = boot;
+            document.getElementById("arr").innerHTML = x + " height in px";
+        }
+        // random function
+        function random() {
+            for (i = 0; i < n; i++) {
+                myArray[i] = Math.floor(Math.random() * 300);
+                doc[i].style.height = myArray[i] + "px";
+            }
+            x = myArray;
+            document.getElementById("arr").innerHTML = myArray + " height in px";
+        }
+        // color change
+        function colorChange() {
+            for (var i = 0; i < n; i++) {
+                doc[i].style.backgroundColor = "coral";
+            }
+
+        }
+        document.getElementById("arr").innerHTML = x + " height in px";
+        document.getElementById("kalee").innerHTML = n1;
+        // Engine
+        function myfunction() {
+            var swap = true;
+            for (var i = 0; i < n1; i++) {
+                if (x[i] > x[i + 1]) {
+                    var temp = x[i];
+                    x[i] = x[i + 1];
+                    x[i + 1] = temp;
+                    var temp1 = doc[i].style.height;
+                    doc[i].style.height = doc[i + 1].style.height;
+                    doc[i + 1].style.height = temp1;
+                    var temp2 = doc[i].innerHTML;
+                    doc[i].innerHTML = doc[i + 1].innerHTML;
+                    doc[i + 1].innerHTML = temp2;
+                    var swap = false;
+                }
+            }
+            if (n1 > 0 && swap == false) {
+                --n1;
+                for (var i = 0; i < n; i++) {
+                    doc[i].style.backgroundColor = "white";
+                }
+                var myVar = setTimeout(myfunction, 500);
+                var myVar1 = setTimeout(colorChange, 250);
+            }
+            if (swap) {
+                clearTimeout(myVar);
+                n1 = b;
+            }
+            document.getElementById("kalee").innerHTML = n1;
+            document.getElementById("arr").innerHTML = x + " height in px";
+        }
+    </script>
 </body>
 
 </html>
